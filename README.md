@@ -27,6 +27,9 @@ Encore is split-first payments for bands on the [XRP Ledger](https://xrpl.org). 
 | `ledger-local.js` | Offline ledger simulator (payments, escrows, simulated time) for running without network access. |
 | `generate-dashboard.js` / `generate-campaign-dashboard.js` | Render self-contained HTML dashboards from demo results. |
 | `setup-wallets.js` | Standalone testnet wallet funding. |
+| `listen.js` | **The split listener** — subscribes to the band's tip address on testnet; any incoming payment from any surface auto-splits per the split sheet. The live service form of the engine. |
+| `pay-button.html` | Example integrator widget: a self-contained Pay-Me button + QR for any tip address. |
+| `INTEGRATION.md` | **The integration interface** — how any external surface (tile, venue page, ticketing) connects a Pay-Me button to a split sheet. |
 
 ## Run it
 

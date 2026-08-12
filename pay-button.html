@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pay Me — Encore example widget</title>
+<!--
+  Encore integrator example: a self-contained "Pay Me" widget.
+  This is the ENTIRE integrator side of an Encore v0 integration (see INTEGRATION.md):
+  render a payment affordance pointing at the band's Encore tip address.
+  The split happens on Encore's side the moment the payment lands.
+
+  To use: change BAND below. Testnet only for this demo.
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; display: grid; place-items: center;
+         min-height: 100vh; margin: 0; background: #f9f9f7; color: #0b0b0b; }
+  @media (prefers-color-scheme: dark) { body { background: #0d0d0d; color: #fff; } .card { background: #1a1a19 !important; border-color: rgba(255,255,255,.1) !important; } .muted { color: #c3c2b7 !important; } }
+  .card { background: #fcfcfb; border: 1px solid rgba(11,11,11,.1); border-radius: 16px; padding: 28px 32px; text-align: center; max-width: 340px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .muted { color: #52514e; font-size: 13px; margin: 0 0 18px; }
+  #qr { display: inline-block; background: #fff; padding: 10px; border-radius: 10px; }
+  .addr { font-family: ui-monospace, Menlo, monospace; font-size: 11px; word-break: break-all; margin: 14px 0 6px; }
+  .badge { display: inline-block; font-size: 11px; border: 1px solid rgba(11,11,11,.15); border-radius: 999px; padding: 2px 10px; margin-top: 10px; }
+  a.pay { display: inline-block; margin-top: 14px; padding: 10px 22px; border-radius: 10px; background: #1F4E79; color: #fff;
+          text-decoration: none; font-weight: 600; font-size: 15px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="bandname"></h1>
+    <p class="muted">Tip the band — every member gets their share automatically</p>
+    <div id="qr"></div>
+    <div class="addr" id="addr"></div>
+    <a class="pay" id="paylink" href="#">Pay Me</a>
+    <div class="badge">splits by Encore · XRP Ledger</div>
+  </div>
+
+<script>
+  // ===== Integrator configuration — the only part you change =====
+  const BAND = {
+    name: "D2UR",
+    tipAddress: "rBANDADDRESSGOESHERE",   // the band's Encore tip address (testnet)
+    suggestedAmountXrp: 5,
+  };
+  // ===============================================================
+
+  const uri = `xrpl:${BAND.tipAddress}?amount=${BAND.suggestedAmountXrp}`;
+  document.getElementById("bandname").textContent = BAND.name;
+  document.getElementById("addr").textContent = BAND.tipAddress;
+  document.getElementById("paylink").href = uri;
+  new QRCode(document.getElementById("qr"), { text: uri, width: 180, height: 180 });
+</script>
+</body>
+</html>
