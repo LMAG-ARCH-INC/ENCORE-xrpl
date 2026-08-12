@@ -1,0 +1,10 @@
+node_modules/
+package-lock.json
+wallets.json
+demo-results.json
+campaign-results.json
+dashboard.html
+campaign-dashboard.html
+*.seed
+*.key
+.env
