@@ -1,0 +1,8 @@
+{
+  "band": "D2UR",
+  "description": "D2UR split sheet — change shares here; must sum to 100",
+  "members": [
+    { "name": "Mike", "share": 50 },
+    { "name": "Diane", "share": 50 }
+  ]
+}

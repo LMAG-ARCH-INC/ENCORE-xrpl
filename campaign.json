@@ -1,0 +1,22 @@
+{
+  "campaign": "D2UR — Debut Album",
+  "description": "Fan-funded album. Pledges are locked in XRPL escrow and release to the band per milestone; if a milestone deadline lapses, backers are refunded automatically by the ledger.",
+  "goalXrp": 100,
+  "milestones": [
+    { "name": "Recording complete", "pct": 50 },
+    { "name": "Album delivered", "pct": 50 }
+  ],
+  "backers": [
+    { "name": "Fan A", "pledgeXrp": 50 },
+    { "name": "Fan B", "pledgeXrp": 30 },
+    { "name": "Fan C", "pledgeXrp": 20 }
+  ],
+  "failedCampaign": {
+    "campaign": "D2UR — Tour Bus Fund",
+    "description": "A campaign that stalls: no milestone completes, the deadline passes, and every backer gets their pledge back from escrow automatically.",
+    "backers": [
+      { "name": "Fan A", "pledgeXrp": 15 },
+      { "name": "Fan B", "pledgeXrp": 10 }
+    ]
+  }
+}

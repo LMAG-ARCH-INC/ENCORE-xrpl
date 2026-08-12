@@ -1,0 +1,14 @@
+{
+  "name": "encore-prototype",
+  "version": "0.1.0",
+  "description": "Encore Phase 1 — XRPL split engine + tip flow demo (band: D2UR)",
+  "license": "MIT",
+  "scripts": {
+    "demo": "node demo.js 20",
+    "dashboard": "node generate-dashboard.js"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "xrpl": "^5.0.0"
+  }
+}
