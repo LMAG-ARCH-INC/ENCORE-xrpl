@@ -68,7 +68,7 @@ Phase 1 (split engine + tipping) — **proven live**. Phase 2 (escrow fan-fundin
 
 Early prototype by a working musician who got tired of the way musicians get paid. Not production software; run it on testnet only.
 
-An **LMAG Architects Inc.** project · Mike Isbister · D2UR · m.isbister@lm-esp.ca
+An **LMAG Architects Inc.** project · Mike Isbister · D2UR · lmagarchinc@gmail.com
 
 *Formerly developed under the working title "Encore" (Aug 2026); renamed Splitter on 2026-08-14.*
 
