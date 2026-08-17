@@ -59,7 +59,7 @@ const events = r.events.map(e => `<div class="ev">${e.replace(/\[(.*?)\]/, '<spa
 const html = `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Encore · ${r.campaign}</title>
+<title>Splitter · ${r.campaign}</title>
 <style>
   .viz-root{color-scheme:light;
     --surface-1:#fcfcfb;--page:#f9f9f7;--ink-1:#0b0b0b;--ink-2:#52514e;--muted:#898781;
@@ -106,7 +106,7 @@ const html = `<!DOCTYPE html>
   a{color:var(--series-1)}
 </style></head>
 <body><div class="viz-root"><div class="wrap">
-  <header><h1>Encore · Fan-Funding</h1><span class="badge">${isLocal ? "local simulation" : "live XRPL testnet"}</span></header>
+  <header><h1>Splitter · Fan-Funding</h1><span class="badge">${isLocal ? "local simulation" : "live XRPL testnet"}</span></header>
   <div class="sub">${r.campaign} · ${runTime}</div>
 
   <div class="tiles">
@@ -134,7 +134,7 @@ const html = `<!DOCTYPE html>
       <thead><tr><th>Backer</th><th class="num">Pledge</th><th>Outcome</th><th>Refund tx</th></tr></thead>
       <tbody>${failedRows}</tbody>
     </table>
-    <p style="font-size:12px;color:var(--ink-2);margin-top:10px">No milestone completed before the deadline, so the ledger's escrow rules returned every pledge. Nobody — not the band, not Encore — could have kept the money.</p>
+    <p style="font-size:12px;color:var(--ink-2);margin-top:10px">No milestone completed before the deadline, so the ledger's escrow rules returned every pledge. Nobody — not the band, not Splitter — could have kept the money.</p>
   </div>
 
   <div class="card">
@@ -151,7 +151,7 @@ const html = `<!DOCTYPE html>
     ${isLocal
       ? "This run used real XRPL keypairs and real offline-signed EscrowCreate / EscrowFinish / EscrowCancel transactions, applied to a local ledger simulator with simulated time. Run <code>MODE=testnet node demo-phase2.js</code> on a machine with open internet for a live run (~2 minutes — escrow deadlines wait in real time)."
       : "Live run on the XRPL testnet — click any transaction hash to view it on the public explorer."}
-    <br>Encore prototype · Phase 2: escrow-backed fan-funding · testnet XRP has no monetary value.
+    <br>Splitter prototype · Phase 2: escrow-backed fan-funding · testnet XRP has no monetary value.
   </div>
 </div></div></body></html>`;
 

@@ -1,4 +1,4 @@
-// Encore split listener — the live service form of the split engine.
+// Splitter split listener — the live service form of the split engine.
 //
 // Subscribes to the band's tip address on the XRPL testnet. Whenever ANY
 // payment arrives — from a QR scan, a Pay-Me button on an external surface,
@@ -37,7 +37,7 @@ function parseSourceMemo(tx) {
   try {
     for (const m of tx.Memos || []) {
       const type = Buffer.from(m.Memo.MemoType || "", "hex").toString();
-      if (type === "encore/tip") {
+      if (type === "splitter/tip") {
         return Buffer.from(m.Memo.MemoData || "", "hex").toString(); // e.g. "src=monolith;ref=tile:1234"
       }
     }
@@ -61,7 +61,7 @@ async function handleTip(client, bandWallet, splitSheet, walletsByRole, delivere
       Destination: s.address,
       Amount: s.drops,
       Memos: [{ Memo: {
-        MemoType: Buffer.from("encore/split").toString("hex").toUpperCase(),
+        MemoType: Buffer.from("splitter/split").toString("hex").toUpperCase(),
         MemoData: Buffer.from(memoData).toString("hex").toUpperCase(),
       }}],
     });
@@ -85,7 +85,7 @@ async function main() {
   await client.connect();
   await client.request({ command: "subscribe", accounts: [bandWallet.address] });
 
-  console.log(`Encore split listener — ${splitSheet.band}`);
+  console.log(`Splitter split listener — ${splitSheet.band}`);
   console.log(`Watching tip address: ${bandWallet.address}`);
   console.log(`Split sheet: ${splitSheet.members.map(m => `${m.name} ${m.share}%`).join(" · ")}`);
   console.log(`Send testnet XRP to the address above and watch it split.\n`);

@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pay Me — Encore example widget</title>
+<title>Pay Me — Splitter example widget</title>
 <!--
-  Encore integrator example: a self-contained "Pay Me" widget.
-  This is the ENTIRE integrator side of an Encore v0 integration (see INTEGRATION.md):
-  render a payment affordance pointing at the band's Encore tip address.
-  The split happens on Encore's side the moment the payment lands.
+  Splitter integrator example: a self-contained "Pay Me" widget.
+  This is the ENTIRE integrator side of an Splitter v0 integration (see INTEGRATION.md):
+  render a payment affordance pointing at the band's Splitter tip address.
+  The split happens on Splitter's side the moment the payment lands.
 
   To use: change BAND below. Testnet only for this demo.
 -->
@@ -35,14 +35,14 @@
     <div id="qr"></div>
     <div class="addr" id="addr"></div>
     <a class="pay" id="paylink" href="#">Pay Me</a>
-    <div class="badge">splits by Encore · XRP Ledger</div>
+    <div class="badge">splits by Splitter · XRP Ledger</div>
   </div>
 
 <script>
   // ===== Integrator configuration — the only part you change =====
   const BAND = {
     name: "D2UR",
-    tipAddress: "rBANDADDRESSGOESHERE",   // the band's Encore tip address (testnet)
+    tipAddress: "rBANDADDRESSGOESHERE",   // the band's Splitter tip address (testnet)
     suggestedAmountXrp: 5,
   };
   // ===============================================================

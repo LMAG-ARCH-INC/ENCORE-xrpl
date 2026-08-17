@@ -1,4 +1,4 @@
-// Encore Phase-2 demo: escrow-backed fan-funding.
+// Splitter Phase-2 demo: escrow-backed fan-funding.
 //
 // Scenario A — "D2UR — Debut Album" (success):
 //   3 fans pledge 100 XRP total. Each pledge is locked on-ledger as one escrow
@@ -161,7 +161,7 @@ async function main() {
     for (const s of splits) {
       const rec = await submitTx(wallets.band, w => {
         const [tx] = buildSplitPayments(w.address, [{ address: s.address, drops: s.drops }],
-          { sequence: seqOf(w), memo: `encore/split:${s.name}:${s.share}%|${name}` });
+          { sequence: seqOf(w), memo: `splitter/split:${s.name}:${s.share}%|${name}` });
         return tx;
       });
       out.releases.push({ milestone: name, split: s.name, xrp: Number(s.xrp), ...pick(rec) });

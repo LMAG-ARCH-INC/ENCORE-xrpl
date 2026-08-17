@@ -1,4 +1,4 @@
-// Encore split engine — the core primitive.
+// Splitter split engine — the core primitive.
 // Takes an incoming payment and a split sheet, returns the outbound share payments.
 // This module is ledger-agnostic: the same logic runs against the local simulator
 // or the live XRPL testnet/mainnet.
@@ -54,7 +54,7 @@ function buildSplitPayments(bandAddress, splits, { sequence, fee = "12", lastLed
     };
     if (memo) {
       tx.Memos = [{ Memo: {
-        MemoType: Buffer.from("encore/split").toString("hex").toUpperCase(),
+        MemoType: Buffer.from("splitter/split").toString("hex").toUpperCase(),
         MemoData: Buffer.from(memo).toString("hex").toUpperCase(),
       }}];
     }

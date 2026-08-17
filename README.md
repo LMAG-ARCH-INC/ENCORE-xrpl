@@ -1,10 +1,12 @@
-# Encore
+# Splitter
 
-**The payment rail for working musicians, built on a payment rail.**
+**The payment rail for working musicians, built on a payment rail.** · [splitter.band](https://splitter.band)
 
-Encore is split-first payments for bands on the [XRP Ledger](https://xrpl.org). A band writes its revenue deal down once as a **split sheet** — member wallets and percentages — and from then on, every payment that touches the band's wallet divides and settles automatically: tips, crowdfunding releases, sales. One inbound payment becomes N outbound member payments in seconds, for fractions of a cent, with the reason stamped on-ledger in transaction memos.
+*One payment in, every member fed.* Like the audio splitter that feeds one signal to every amp — and the splitter van that gets the whole band to the gig.
 
-**Strictly payments utility.** No token. No speculation. No custody — the band wallet is a rail, not a vault, and campaign pledges are held by the ledger's native escrow, never by Encore.
+Splitter is split-first payments for bands on the [XRP Ledger](https://xrpl.org). A band writes its revenue deal down once as a **split sheet** — member wallets and percentages — and from then on, every payment that touches the band's wallet divides and settles automatically: tips, crowdfunding releases, sales. One inbound payment becomes N outbound member payments in seconds, for fractions of a cent, with the reason stamped on-ledger in transaction memos.
+
+**Strictly payments utility.** No token. No speculation. No custody — the band wallet is a rail, not a vault, and campaign pledges are held by the ledger's native escrow, never by Splitter.
 
 ## Proven on the live testnet
 
@@ -54,7 +56,7 @@ In `MODE=testnet`, wallets are funded from the public faucet and every transacti
 ## Design principles
 
 - **A rail, not a vault.** Money moves through; it never rests. No float, deliberately.
-- **Non-custodial.** Escrowed pledges are held by the ledger itself. Nobody — including Encore — can block a stalled campaign's refunds.
+- **Non-custodial.** Escrowed pledges are held by the ledger itself. Nobody — including Splitter — can block a stalled campaign's refunds.
 - **Utility, never investment.** Fans pay for music; musicians get paid for music.
 - **Members choose their exposure.** Payout currency (XRP / RLUSD / a mix) is a per-member preference, not a platform opinion.
 
@@ -67,6 +69,8 @@ Phase 1 (split engine + tipping) — **proven live**. Phase 2 (escrow fan-fundin
 Early prototype by a working musician who got tired of the way musicians get paid. Not production software; run it on testnet only.
 
 An **LMAG Architects Inc.** project · Mike Isbister · D2UR · m.isbister@lm-esp.ca
+
+*Formerly developed under the working title "Encore" (Aug 2026); renamed Splitter on 2026-08-14.*
 
 ## License
 

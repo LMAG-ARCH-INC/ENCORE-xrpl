@@ -49,7 +49,7 @@ async function main() {
   const html = `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Encore · ${r.band} tip-split demo</title>
+<title>Splitter · ${r.band} tip-split demo</title>
 <style>
   .viz-root{color-scheme:light;
     --surface-1:#fcfcfb;--page:#f9f9f7;--ink-1:#0b0b0b;--ink-2:#52514e;--muted:#898781;
@@ -96,7 +96,7 @@ async function main() {
   @media (max-width:640px){.grid2{grid-template-columns:1fr}}
 </style></head>
 <body><div class="viz-root"><div class="wrap">
-  <header><h1>Encore</h1><span class="badge">${isLocal ? "local simulation" : "live XRPL testnet"}</span></header>
+  <header><h1>Splitter</h1><span class="badge">${isLocal ? "local simulation" : "live XRPL testnet"}</span></header>
   <div class="sub">${r.band} · tip-and-split demo · ${runTime}</div>
 
   <div class="tiles">
@@ -143,7 +143,7 @@ async function main() {
     ${isLocal
       ? "This run used real XRPL keypairs and real offline-signed Payment transactions, applied to a local ledger simulator (the cloud sandbox can't reach the testnet). Run <code>MODE=testnet node demo.js</code> on a machine with open internet for a live run — identical code, transactions viewable on testnet.xrpl.org."
       : "Live run on the XRPL testnet — click any transaction hash to view it on the public explorer."}
-    <br>Encore prototype · split-first payments for working musicians · testnet XRP has no monetary value.
+    <br>Splitter prototype · split-first payments for working musicians · testnet XRP has no monetary value.
   </div>
 </div></div></body></html>`;
 

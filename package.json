@@ -1,7 +1,7 @@
 {
-  "name": "encore-prototype",
+  "name": "splitter-prototype",
   "version": "0.1.0",
-  "description": "Encore Phase 1 — XRPL split engine + tip flow demo (band: D2UR)",
+  "description": "Splitter Phase 1 — XRPL split engine + tip flow demo (band: D2UR)",
   "license": "MIT",
   "scripts": {
     "demo": "node demo.js 20",

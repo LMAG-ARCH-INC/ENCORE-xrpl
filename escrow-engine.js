@@ -1,9 +1,9 @@
-// Encore escrow engine — Phase 2 core.
+// Splitter escrow engine — Phase 2 core.
 // Builds real XRPL EscrowCreate / EscrowFinish / EscrowCancel transactions for
 // fan-funding campaigns. A pledge = one escrow per milestone, locked on-ledger:
 // - milestone completes  -> EscrowFinish releases that slice to the band
 // - deadline lapses      -> EscrowCancel returns the slice to the backer
-// The ledger itself enforces both outcomes; Encore (or anyone) just submits.
+// The ledger itself enforces both outcomes; Splitter (or anyone) just submits.
 
 const { xrpToDrops } = require("xrpl");
 
@@ -36,7 +36,7 @@ function buildEscrowCreate(backerAddress, bandAddress, drops, { sequence, finish
   if (finishAfter) tx.FinishAfter = finishAfter;
   if (cancelAfter) tx.CancelAfter = cancelAfter;
   if (memo) tx.Memos = [{ Memo: {
-    MemoType: Buffer.from("encore/pledge").toString("hex").toUpperCase(),
+    MemoType: Buffer.from("splitter/pledge").toString("hex").toUpperCase(),
     MemoData: Buffer.from(memo).toString("hex").toUpperCase(),
   }}];
   return tx;

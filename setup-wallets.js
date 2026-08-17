@@ -1,4 +1,4 @@
-// Encore prototype — step 1: create and fund XRPL testnet wallets
+// Splitter prototype — step 1: create and fund XRPL testnet wallets
 // Creates: the D2UR band wallet (receives tips), one wallet per member, and a "fan" wallet.
 const { Client } = require("xrpl");
 const fs = require("fs");

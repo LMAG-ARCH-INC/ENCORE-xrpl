@@ -1,4 +1,4 @@
-// Encore Phase-1 demo: a fan tips D2UR, the split engine pays Mike & Diane in seconds.
+// Splitter Phase-1 demo: a fan tips D2UR, the split engine pays Mike & Diane in seconds.
 //
 //   MODE=local   (default) — runs entirely offline against the local ledger simulator.
 //                Wallets and transaction signatures are REAL; consensus is simulated.
@@ -58,7 +58,7 @@ async function main() {
   // ---- 2. The fan tips the band (this is what the QR code triggers) ----
   const t0 = Date.now();
   const tipDrops = xrpToDrops(TIP_XRP);
-  const tipResult = await pay(wallets.fan, wallets.band.address, tipDrops, "encore/tip");
+  const tipResult = await pay(wallets.fan, wallets.band.address, tipDrops, "splitter/tip");
   log(out, `TIP: fan → ${splitSheet.band} for ${TIP_XRP} XRP  [${tipResult.hash}]`);
   out.tip = tipResult;
 
@@ -66,7 +66,7 @@ async function main() {
   const splits = computeSplits(tipDrops, splitSheet, out.wallets);
   out.splits = [];
   for (const s of splits) {
-    const r = await pay(wallets.band, s.address, s.drops, `encore/split:${s.name}:${s.share}%`);
+    const r = await pay(wallets.band, s.address, s.drops, `splitter/split:${s.name}:${s.share}%`);
     log(out, `SPLIT: ${s.share}% → ${s.name} = ${s.xrp} XRP  [${r.hash}]`);
     out.splits.push({ ...s, ...r });
   }
