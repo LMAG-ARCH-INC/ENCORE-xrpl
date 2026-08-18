@@ -1,0 +1,16 @@
+{
+  "id": "2026-08-29-no-show-venue",
+  "name": "The night the room didn't pay",
+  "date": "2026-08-29",
+  "venue": "(a bar that 'forgot' the guarantee)",
+  "description": "The familiar story: only the tips came in. The waterfall pays what it can in priority order and reports the shortfall honestly instead of hiding it in the leader's pocket.",
+  "inflows": [
+    { "source": "tips", "from": "fan", "amount": 15, "via": "payment" }
+  ],
+  "lines": [
+    { "type": "expense", "label": "Van rental",  "payee": "Mike",     "amount": 8 },
+    { "type": "rate",    "label": "Sub bassist", "payee": "sub-bass", "amount": 10 },
+    { "type": "rate",    "label": "Sound tech",  "payee": "sound",    "amount": 8 }
+  ],
+  "ownerOverrides": null
+}
