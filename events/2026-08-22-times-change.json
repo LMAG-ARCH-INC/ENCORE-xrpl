@@ -1,0 +1,18 @@
+{
+  "id": "2026-08-22-times-change",
+  "name": "Saturday at Times Change(d)",
+  "date": "2026-08-22",
+  "venue": "Times Change(d) High & Lonesome Club, Winnipeg",
+  "description": "A normal night: guarantee held in escrow before downbeat, tips at the merch table, a sub on bass, the van, and the leader fee — then the residual splits.",
+  "inflows": [
+    { "source": "guarantee", "from": "venue", "amount": 60, "via": "escrow", "note": "Venue locks the guarantee to the band's settlement address before the show; releases at end of night." },
+    { "source": "tips",      "from": "fan",   "amount": 15, "via": "payment" }
+  ],
+  "lines": [
+    { "type": "expense", "label": "Van rental",        "payee": "Mike",     "amount": 8,  "note": "Reimbursement — Mike paid the rental company on his card." },
+    { "type": "expense", "label": "Strings & tape",    "payee": "Diane",    "amount": 2 },
+    { "type": "rate",    "label": "Sub bassist",       "payee": "sub-bass", "amount": 10 },
+    { "type": "rate",    "label": "Sound tech",        "payee": "sound",    "amount": 8 }
+  ],
+  "ownerOverrides": null
+}
