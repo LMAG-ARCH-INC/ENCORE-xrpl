@@ -36,6 +36,8 @@ Splitter reads and writes structured memos. For an incoming tip, integrators SHO
 
 Outbound split payments carry `MemoType: splitter/split` with `MemoData: <member>:<share>%`, so the full money trail — which surface produced which tip, and how it divided — is reconstructable from the public ledger alone. Missing or malformed memos never block a split; attribution is best-effort by design.
 
+**Settlement memos (Phase 1.5).** Gig money settles through a waterfall rather than a plain split. Outbound settlement lines carry `MemoType: splitter/settle` with `MemoData: event=<event id>;line=<n>;type=<expense|rate|fee|share>;label=<text>`. A venue locking a guarantee before the show uses `EscrowCreate` to the band's settlement address with `MemoType: splitter/guarantee`, `MemoData: event=<event id>;source=guarantee`, `FinishAfter` = end of night and `CancelAfter` as a safety valve; anyone may submit the `EscrowFinish` once `FinishAfter` passes. Tips destined for a specific gig may add `event=<event id>` to their `splitter/tip` MemoData so the night's statement attributes them; tips without it settle as plain splits.
+
 ## Confirmation
 
 Because everything settles on-ledger, an integrator can confirm end-to-end without any Splitter endpoint: watch the band address (WebSocket `subscribe` on any public XRPL node) and observe (a) the tip arriving and (b) the split payments leaving within seconds, all with `tesSUCCESS` and public transaction hashes. A hosted status/webhook endpoint is a v1 feature, not a v0 requirement.

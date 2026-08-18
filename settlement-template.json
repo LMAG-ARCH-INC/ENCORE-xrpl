@@ -1,0 +1,16 @@
+{
+  "band": "D2UR",
+  "description": "D2UR settlement template — the standing shape of how a gig settles. Confirmed per event (see events/*.json). Owners' shares must sum to 100. Amounts in XRP for the prototype (fiat quoting via RLUSD comes later).",
+  "owners": [
+    { "name": "Mike",  "share": 50, "role": "leader" },
+    { "name": "Diane", "share": 50 }
+  ],
+  "standingLines": [
+    { "type": "rate",    "label": "Leader fee (booking, admin, gear haul)", "payee": "Mike", "amount": 5, "note": "Paid before the residual split — the leader's extra work as a line, not a bigger percentage." }
+  ],
+  "knownPayees": {
+    "sub-bass": { "name": "Sub bassist", "usualRate": 10 },
+    "sound":    { "name": "Sound tech",  "usualRate": 8 }
+  },
+  "fee": { "label": "Splitter routing fee", "percent": 0, "payee": "splitter" }
+}

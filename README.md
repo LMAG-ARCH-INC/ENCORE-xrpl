@@ -4,7 +4,7 @@
 
 *One payment in, every member fed.* Like the audio splitter that feeds one signal to every amp — and the splitter van that gets the whole band to the gig.
 
-Splitter is split-first payments for bands on the [XRP Ledger](https://xrpl.org). A band writes its revenue deal down once as a **split sheet** — member wallets and percentages — and from then on, every payment that touches the band's wallet divides and settles automatically: tips, crowdfunding releases, sales. One inbound payment becomes N outbound member payments in seconds, for fractions of a cent, with the reason stamped on-ledger in transaction memos.
+Splitter is split-first payments for bands on the [XRP Ledger](https://xrpl.org). For money with no costs attached — a tip — a band's **split sheet** (member wallets and percentages) divides it among the members in seconds. For gig money — a guarantee, the door — a band's **settlement template** runs the same waterfall a bandleader does in their head at 1 a.m.: expenses first, then the hired players' rates, then what's left splits among the owners — confirmed per gig, every line a real on-ledger payment with the reason in the memo, the whole thing exportable as a CSV for the accountant. The venue's guarantee can sit in the ledger's own escrow before downbeat, so the band knows it's getting paid before it plays and the leader never fronts the payroll. **The leader stops being the bank.**
 
 **Strictly payments utility.** No token. No speculation. No custody — the band wallet is a rail, not a vault, and campaign pledges are held by the ledger's native escrow, never by Splitter.
 
@@ -29,6 +29,12 @@ Splitter is split-first payments for bands on the [XRP Ledger](https://xrpl.org)
 | `ledger-local.js` | Offline ledger simulator (payments, escrows, simulated time) for running without network access. |
 | `generate-dashboard.js` / `generate-campaign-dashboard.js` | Render self-contained HTML dashboards from demo results. |
 | `setup-wallets.js` | Standalone testnet wallet funding. |
+| `settlement-template.json` | **Phase 1.5** — the band's standing settlement shape: owners + shares, standing lines (e.g. leader fee), known payees + usual rates. |
+| `events/*.json` | One confirmed settlement per gig: inflows (guarantee via escrow, tips) and this night's lines (expenses, rates). |
+| `settlement-engine.js` | **The waterfall**: gross → expenses → rates (hired players before owners) → optional fee → residual → owners' split. Pays what it can when short and reports the rest. `exportCsv()` = the accounting trail. |
+| `demo-settlement.js` | Two nights end-to-end: a normal Saturday (guarantee escrowed before downbeat, released at end of night, full waterfall) and the night the room didn't pay (honest shortfall). |
+| `generate-settlement-dashboard.js` | Settlement statements as HTML — the settlement sheet, on-ledger. |
+| `test-settlement.js` | Pure-math checks for the waterfall (conservation, dust, priority, overrides, fee, CSV). |
 | `listen.js` | **The split listener** — subscribes to the band's tip address on testnet; any incoming payment from any surface auto-splits per the split sheet. The live service form of the engine. |
 | `pay-button.html` | Example integrator widget: a self-contained Pay-Me button + QR for any tip address. |
 | `INTEGRATION.md` | **The integration interface** — how any external surface (tile, venue page, ticketing) connects a Pay-Me button to a split sheet. |
@@ -44,6 +50,12 @@ npm install
 MODE=testnet node demo.js 20        # live XRPL testnet (PowerShell: $env:MODE="testnet"; node demo.js 20)
 node demo.js 20                     # or offline simulation
 node generate-dashboard.js          # then open dashboard.html
+
+# Phase 1.5: the settlement waterfall (two nights) + the accounting trail
+node test-settlement.js                 # engine checks
+MODE=testnet node demo-settlement.js    # live (~1 min; guarantee escrow waits for end of night)
+node demo-settlement.js                 # or offline simulation
+node generate-settlement-dashboard.js   # then open settlement-dashboard.html; settlement.csv is for the accountant
 
 # Phase 2: escrow fan-funding (two scenarios)
 MODE=testnet node demo-phase2.js    # live (~2 min; escrow deadlines wait in real time)
@@ -62,7 +74,7 @@ In `MODE=testnet`, wallets are funded from the public faucet and every transacti
 
 ## Roadmap
 
-Phase 1 (split engine + tipping) — **proven live**. Phase 2 (escrow fan-funding) — built; verification layer designed (release oracles via streaming/distributor APIs, pledge-weighted objection windows, bounded arbitration, crypto-condition key-reveal delivery). Ahead: per-member payout mix, NFT track sales with transfer fees, and a payout API for venues, ticketing, and platforms.
+Phase 1 (split engine + tipping) — **proven live**. Phase 1.5 (settlement waterfall + guarantee-in-escrow + CSV trail) — built, simulated, testnet-ready. Phase 2 (escrow fan-funding) — built; verification layer designed (release oracles via streaming/distributor APIs, pledge-weighted objection windows, bounded arbitration, crypto-condition key-reveal delivery). Ahead: per-member payout mix, NFT track sales with transfer fees, and a payout API for venues, ticketing, and platforms.
 
 ## Status & contact
 

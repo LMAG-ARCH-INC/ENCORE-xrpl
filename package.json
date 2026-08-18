@@ -1,11 +1,14 @@
 {
   "name": "splitter-prototype",
   "version": "0.1.0",
-  "description": "Splitter Phase 1 — XRPL split engine + tip flow demo (band: D2UR)",
+  "description": "Splitter — XRPL split engine, settlement waterfall, escrow fan-funding (band: D2UR)",
   "license": "MIT",
   "scripts": {
     "demo": "node demo.js 20",
-    "dashboard": "node generate-dashboard.js"
+    "dashboard": "node generate-dashboard.js",
+    "settle": "node demo-settlement.js",
+    "settle:dashboard": "node generate-settlement-dashboard.js",
+    "test": "node test-settlement.js"
   },
   "dependencies": {
     "qrcode": "^1.5.4",
