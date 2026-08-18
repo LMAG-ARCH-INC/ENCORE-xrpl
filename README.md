@@ -16,6 +16,15 @@ Splitter is split-first payments for bands on the [XRP Ledger](https://xrpl.org)
 - [Split: 50% → member 1](https://testnet.xrpl.org/transactions/14FB30C75F32370ADE13ACC17223497AC6BE52275C48912095C363445E0147C6)
 - [Split: 50% → member 2](https://testnet.xrpl.org/transactions/2ABC94E0E99C593DB1F0AFD79A9F1EF58B7B86595918204328C3CF436B9CD087)
 
+## Phase 1.5 — the settlement waterfall, also proven live
+
+2026-08-18, same machine, both demo nights on the public testnet, every transaction `tesSUCCESS`:
+
+- **Saturday at Times Change(d)** — the venue's 60 XRP guarantee [locked in ledger escrow before downbeat](https://testnet.xrpl.org/transactions/EB9B1D01188C2DAAB73966439BE063BA87F398B26C6ECF9B9FA3A4247293DC9F), [released at end of night](https://testnet.xrpl.org/transactions/B2E343485FEC9E9C191BA3DB986D6C1CC5C47F5B4D77AB37945464A141476F1E), plus [15 XRP in tips](https://testnet.xrpl.org/transactions/1918B62C1FBD1D0E1A956C62A686E48B5F50C2EDA7BCC61CC9A04043FE7C40C0); then the waterfall — [van rental](https://testnet.xrpl.org/transactions/6DA8CBB79EE0BAF85A9830B68963417ABA0A8171DECB36B25CEA6005D5F00610), [strings](https://testnet.xrpl.org/transactions/AC5E2DC377015BBE07E2F1CF686A873BDFA886A01C72C980FEA15298463CC874), [sub bassist](https://testnet.xrpl.org/transactions/07094DFA96A47BEAD7046BAF95B376ADBBEED05FB2C021F2B375A621431618FC), [sound tech](https://testnet.xrpl.org/transactions/4A9A6C6DC9078D216793227A87BDF22FC1E84917303EBC8DB3AE0A3636D8B9D3), [leader fee](https://testnet.xrpl.org/transactions/C1E9B2753F7A703F2879B601A1A116F1B48F991F8D77393ADA3467F3FC613582), and the residual split [50%](https://testnet.xrpl.org/transactions/D7D2DB0CAC5B710E3EBB8645FFBED86A56A26BD39895C64DEFA6F907AB233A30) / [50%](https://testnet.xrpl.org/transactions/2D3542B7414946F2EE33A7F09A8E66AEBADAE1BFF5D042A149159284A9879F2E). Settled in 69 s including the escrow's wait for "end of night."
+- **The night the room didn't pay** — [tips only](https://testnet.xrpl.org/transactions/6B244752A49ABAD11FCF979CA0665A993E1A9DECBA09FC69666BF4F62D792255); [van reimbursed](https://testnet.xrpl.org/transactions/3A37DF8C49ADB448A08830D50CD5819B5137053A15B55F9FC2BAA909ADA84621), [sub paid 7 of 10](https://testnet.xrpl.org/transactions/668A441B321E50151D91190F514941803B7FC360BFE1C3998BF7CB1F1D5E5D45), sound tech and leader fee recorded as owed, owners nothing — a 16 XRP shortfall on the record instead of in the leader's pocket.
+
+The band's settlement address ended both nights back at its starting balance minus fees: a rail, not a vault.
+
 ## What's in this repo
 
 | File | What it does |
@@ -74,7 +83,7 @@ In `MODE=testnet`, wallets are funded from the public faucet and every transacti
 
 ## Roadmap
 
-Phase 1 (split engine + tipping) — **proven live**. Phase 1.5 (settlement waterfall + guarantee-in-escrow + CSV trail) — built, simulated, testnet-ready. Phase 2 (escrow fan-funding) — built; verification layer designed (release oracles via streaming/distributor APIs, pledge-weighted objection windows, bounded arbitration, crypto-condition key-reveal delivery). Ahead: per-member payout mix, NFT track sales with transfer fees, and a payout API for venues, ticketing, and platforms.
+Phase 1 (split engine + tipping) — **proven live**. Phase 1.5 (settlement waterfall + guarantee-in-escrow + CSV trail) — **proven live** (2026-08-18). Phase 2 (escrow fan-funding) — built; verification layer designed (release oracles via streaming/distributor APIs, pledge-weighted objection windows, bounded arbitration, crypto-condition key-reveal delivery). Ahead: per-member payout mix, NFT track sales with transfer fees, and a payout API for venues, ticketing, and platforms.
 
 ## Status & contact
 
